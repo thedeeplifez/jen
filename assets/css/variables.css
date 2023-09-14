@@ -1,0 +1,78 @@
+@tailwind base;
+
+@layer base {
+	:root {
+    --body: #eef2ff;
+    --content: #ffffff;
+		--primary: #3b82f6;
+    --secondary: #818cf8;
+    --text-base: #0f172a;
+    --text-light: #64748b;
+    --line: #94a3b8;
+    --danger: #ff0000;
+	}
+}
+
+:root {
+  --bg-main: linear-gradient(to right, var(--secondary), var(--primary));
+  --shadow-main: 0px 0px 10px 3px var(--primary);
+  --shadow-main-hover: 0px 12px 10px -6px rgb(20 136 204 / 53%);
+}
+
+html.dark {
+  --body: #181F21;
+  --content: #262E32;
+  --primary: #67e8f9;
+  --secondary: #0891b2;
+  --text-base: #f1f5f9;
+  /* --bg-main: #0891b2 */
+}
+
+/* inputs */
+:root {
+    --o-primary: #3b82f6;
+    --o-primary-light: #72c1ef;
+    --o-padding: 0.5em 0.875em;
+    --o-border-radius: 6px;
+    --o-border-width: 1px;
+    --o-border-color: #94a3b8;
+    --o-bg: #fff;
+    --o-text: #0f172a;
+    --o-shadow: none;
+    --o-shadow-focus: 0px 1px 2px 1px #2b32b2b3;
+    --o-select-arrow: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23444' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+
+    /* Checkbox */
+    --checbox-bg: #fff;
+    --checkbox-border-radius: 2px;
+    --checkbox-border-color: #94a3b8;
+    --tick-color: #fff;
+    --switch-thumb: #94a3b8;
+    --switch-thumb-checked: #fff;
+
+    /* OptionsWrapper */
+    --o-dropdown-bg: #FFFFFF;
+    --o-dropdown-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+
+    /* Select */
+    --o-option-selected-bg: #3b82f6;
+    --o-option-hover-bg: #818cf8;
+    --o-option-selected-text: #fff;
+
+    /* DatePicker */
+    --o-text-light: #888888;
+    --o-date-selected-text: #fff;
+    --o-date-selected-bg: #3b82f6;
+  }
+
+html.dark {
+    --o-border-color: #94a3b8;
+    --o-bg: #1F252A;
+    --o-border-color: transparent;
+    --o-text: #f1f5f9;
+
+    --checbox-bg: #232227;
+    --checkbox-border-color: transparent;
+
+    --o-dropdown-bg: #1F252A;
+}

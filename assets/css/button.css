@@ -1,0 +1,80 @@
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+    background-color: transparent;
+    padding: var(--o-padding);
+    /* font-weight: 500; */
+    border-radius: var(--o-border-radius);
+}
+  
+  
+.btn.primary {
+    background: var(--bg-main);
+    color: #fff;
+    transition: all 0.3s;
+	position: relative;
+	overflow: hidden;
+    box-shadow: var(--shadow-main-hover);
+}
+
+/* .btn.primary:hover {
+    box-shadow: var(--shadow-main-hover);
+} */
+
+.btn.primary:hover:after {
+	content: "";
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 100%);
+    width: 150%;
+    height: 40%;
+    position: absolute;
+    opacity: 0.3;
+    top: 0;
+    left: -10%;
+    animation: shiningAnimation 2s ease infinite;
+	transition: all 1s;
+}
+
+@keyframes shiningAnimation {
+	0% {
+        transform: translateX(-50%) rotate(-25deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(-25deg);
+    }
+}
+
+.btn.outline-primary {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    position: relative;
+}
+  
+.btn.outline-primary:not(:disabled):hover{
+    box-shadow: var(--shadow-main-hover);
+}
+  
+.btn.cancel {
+    color: var(--primary);
+    background-color: transparent
+}
+  
+.btn.cancel:hover {
+    border: 1px solid var(--primary);
+}
+
+.btn.danger {
+    background-color: transparent;
+    color: var(--danger);
+}
+
+.btn.danger:hover {
+    border: 1px solid var(--danger);  
+}
+  
+.btn:disabled {
+    opacity: 0.6;
+}

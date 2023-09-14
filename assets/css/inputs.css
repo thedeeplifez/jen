@@ -1,0 +1,103 @@
+.o-input-wrapper {
+    position: relative;
+}
+
+.o-input-wrapper .o-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+    color: var(--o-text);
+}
+
+/* .o-input-wrapper .o-icon svg, .o-input-wrapper .o-icon img {
+    width: 1em;
+} */
+
+.o-input-wrapper.left .o-input {
+    padding-left: 2.25em;
+}
+
+.o-input-wrapper.left .o-icon.left {
+    left: 1.25em;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.o-input-wrapper.right .o-input {
+    padding-right: 2.25em;
+}
+
+.o-input-wrapper.right .o-icon.right {
+    right: 1.25em;
+    transform: translateY(-50%) translateX(50%);
+}
+
+.o-input {
+    display: block;
+    width: 100%;
+    padding: var(--o-padding);
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--o-text);
+    background-color: var(--o-bg);
+    background-clip: padding-box;
+    border-style: solid;
+    border-width: var(--o-border-width);
+    border-color: var(--o-border-color);
+    /* border: var(--o-border-width) solid var(--o-border-color); */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: var(--o-border-radius);
+    transition: all 0.2s;
+    box-shadow: var(--o-shadow);
+    outline: none;
+}
+
+.o-input:disabled, 
+.o-input-wrapper.disabled .o-input .o-input.disabled,
+.o-input.dateinput.disabled {
+    background-color: var(--o-disabled);
+    opacity: 1;
+}
+
+.o-input:focus, .o-input.focus, .o-input-wrapper.open .o-input {
+    color: var(--o-text);
+    background-color: var(--o-bg);
+    border-color: var(--o-primary);
+    outline: 0;
+    box-shadow: var(--o-shadow-focus);
+}
+
+.o-input:focus~.o-icon, .o-input-wrapper.open .o-icon {
+    color: var(--o-primary);
+}
+
+select.o-input {
+    background-image: var(--o-select-arrow);
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 0.8em;
+}
+
+.o-input.o-password::-ms-reveal, .o-input.o-password::-ms-clear {
+    display: none;
+}
+
+input[type="number"].o-number::-webkit-outer-spin-button, input[type="number"].o-number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"].o-number {
+    -moz-appearance: textfield;
+}
+
+textarea.o-input {
+    transition: box-shadow 0.3s, border 0.3s;
+}
