@@ -31,4 +31,12 @@
     "vue": "latest"
   },
   "type": "module"
+}"scripts": {
+  "dev": "nuxt"
 }
+"scripts": {
+  "dev": "nuxt"
+},
+
+
+
