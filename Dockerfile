@@ -1,27 +1,24 @@
-# Use an official Node.js runtime as a base image (Node.js 16.x)
-FROM node:16-alpine3.14
+# Use the official Node.js image as the base image
+FROM node:17-alpine3.14
 
-# Set the working directory in the container
-WORKDIR /usr/src/app
+# Set the working directory inside the container
+WORKDIR /app
 
-# Initialize a new Nuxt.js project with a specific version using npm
-RUN npm init -y nuxt 3.5.3
-
-# Change to the newly created Nuxt.js project directory
-WORKDIR /usr/src/app/my-nuxt
-
-# Copy package.json and package-lock.json to the working directory
+# Copy package.json and package-lock.json to the container
 COPY package*.json ./
 
-# Install the project dependencies, ignoring npm engine warnings
-RUN npm install --no-optional
+# Install project dependencies
+RUN npm install
 
-# Copy the rest of the application code to the working directory
+# Copy the entire project directory into the container
 COPY . .
 
-# Expose the port your app will run on (adjust if needed)
+# Build your Nuxt.js application for the desired environment (e.g., "dev")
+RUN npm run build_dev
+
+# Expose the port your Nuxt.js app will run on (if needed)
 EXPOSE 3000
 
-# Define the command to start your application
-CMD [ "npm", "run", "dev" ]
+# Start your Nuxt.js application for the desired environment (e.g., "dev")
+CMD ["npm", "start_dev"]
 
